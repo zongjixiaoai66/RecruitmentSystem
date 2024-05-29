@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZhiweileibieDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZhiweileibieEntity" id="zhiweileibieMap">
+        <result property="zhiweileibie" column="zhiweileibie"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZhiweileibieVO" >
+		SELECT * FROM zhiweileibie  zhiweileibie         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZhiweileibieVO" >
+		SELECT  zhiweileibie.* FROM zhiweileibie  zhiweileibie 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZhiweileibieView" >
+
+		SELECT  zhiweileibie.* FROM zhiweileibie  zhiweileibie 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZhiweileibieView" >
+		SELECT * FROM zhiweileibie  zhiweileibie <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
